@@ -34,11 +34,12 @@ export class Serialize {
       // if it is a schema[]
       else if (schema?.[0]?._struct) schema = schema[0]._struct
 
-      // console.log('-------')
-      // console.log('schema', typeof schema, schema)
-      // console.log('data', typeof data, data)
+      console.log('-------')
+      console.log('schema', typeof schema, schema)
+      console.log('data', typeof data, data)
 
-      for (var property in data) {
+      for (var property in schema) {
+        console.log(property)
         if (data.hasOwnProperty(property)) {
           if (typeof data[property] === 'object') {
             // if data is array, but schemas is flat, use index 0 on the next iteration
